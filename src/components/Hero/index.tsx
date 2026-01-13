@@ -2,7 +2,7 @@
 import Layout from "../Layout";
 import Image from "next/image";
 
-import Person from "../../../public/assets/person.jpeg";
+import Person from "../../../public/assets/person.png";
 import ArrowDown from "../../../public/assets/arrow-down.png";
 import IconGithub from "../../../public/assets/github.png";
 import IconLinkedin from "../../../public/assets/linkedin.png";
@@ -118,7 +118,7 @@ const Hero = () => {
 
           <div className="hidden animate-bounce absolute sm:bottom-10 md:block">
             <div className="w-6 h-10 border-2 border-foreground rounded-full p-2">
-              <div className="w-1 h-3 bg-primary rounded-full animate-pulse ml-[1px]" />
+              <div className="w-px h-3 bg-primary rounded-full animate-pulse ml-[1px]" />
             </div>
           </div>
         </div>

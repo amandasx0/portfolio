@@ -1,5 +1,13 @@
 import Layout from "../Layout";
 import CardProject from "../CardProject";
+import ImageAmandie1 from "../../../public/assets/amandie1.jpg"
+import ImageAmandie2 from "../../../public/assets/amandie2.jpg"
+import ImageAmandie3 from "../../../public/assets/amandie3.jpg"
+import ImageMedico1 from "../../../public/assets/medico1.jpg"
+import ImageMedico2 from "../../../public/assets/medico2.jpg"
+import ImageSispar1 from "../../../public/assets/sispar1.jpg"
+import ImageSispar2 from "../../../public/assets/sispar2.jpg"
+
 
 const Project = () => {
   const projects = [
@@ -11,6 +19,33 @@ const Project = () => {
       github: "https://github.com/amandasx0/amandie-joias",
       domain: "https://amandie-joias.vercel.app",
       languages: ["Next.js", "Tailwind CSS", "JavaScript", "Vercel", "Git Hub"],
+      images: [ImageAmandie1, ImageAmandie2, ImageAmandie3]
+    },
+    {
+      position: "Frontend",
+      title: "Médicos Voluntários",
+      description:
+        "Aplicação desenvolvida com React e Vite, utilizando React Router para navegação entre páginas. O projeto conta com uma tela de cadastro de usuário com validação de formulário, impedindo o envio de dados vazios. O foco foi praticar rotas, organização de páginas e regras de validação, garantindo uma melhor experiência para o usuário.",
+      github: "https://github.com/amandasx0/desafio-rotas",
+      domain: "https://desafio-rotas-tan.vercel.app",
+      languages: [
+        "React",
+        "Vite",
+        "React Router DOM",
+        "JavaScript",
+        "SCSS (Sass)",
+      ],
+      images: [ImageMedico1, ImageMedico2]
+    },
+     {
+      position: "Fullstack",
+      title: "Projeto Sispar Front",
+      description:
+        "Aplicação desenvolvida em React com Vite, focada no gerenciamento de despesas pessoais. Possui sistema de autenticação, cadastro de usuários e controle completo de despesas, incluindo criação, listagem, busca por ID e exclusão de registros. O projeto utiliza React Hook Form para validações e Axios para comunicação com a API.",
+      github: "https://github.com/amandasx0/projeto-sispar",
+      domain: "https://projeto-sispar-mu.vercel.app",
+      languages: ["React", "Vite", "React Router DOM", "React Hook Form", "Axios", "JavaScript", "Sass (SCSS)", "ESLint"],
+      images: [ImageSispar1, ImageSispar2]
     },
     {
       position: "Backend",
@@ -31,21 +66,6 @@ const Project = () => {
       ],
     },
     {
-      position: "Frontend",
-      title: "Médicos Voluntários",
-      description:
-        "Aplicação desenvolvida com React e Vite, utilizando React Router para navegação entre páginas. O projeto conta com uma tela de cadastro de usuário com validação de formulário, impedindo o envio de dados vazios. O foco foi praticar rotas, organização de páginas e regras de validação, garantindo uma melhor experiência para o usuário.",
-      github: "https://github.com/amandasx0/desafio-rotas",
-      domain: "https://desafio-rotas-tan.vercel.app",
-      languages: [
-        "React",
-        "Vite",
-        "React Router DOM",
-        "JavaScript",
-        "SCSS (Sass)",
-      ],
-    },
-    {
       position: "Backend",
       title: "Boot Discord",
       description:
@@ -53,15 +73,7 @@ const Project = () => {
       github: "https://github.com/amandasx0/bot-stark/tree/main",
       languages: ["Node.js", "JavaScript", "Discord.js", "Dontenv", "Git Hub"],
     },
-     {
-      position: "Fullstack",
-      title: "Projeto Sispar Front",
-      description:
-        "Aplicação desenvolvida em React com Vite, focada no gerenciamento de despesas pessoais. Possui sistema de autenticação, cadastro de usuários e controle completo de despesas, incluindo criação, listagem, busca por ID e exclusão de registros. O projeto utiliza React Hook Form para validações e Axios para comunicação com a API.",
-      github: "https://github.com/amandasx0/projeto-sispar",
-      domain: "https://projeto-sispar-mu.vercel.app",
-      languages: ["React", "Vite", "React Router DOM", "React Hook Form", "Axios", "JavaScript", "Sass (SCSS)", "ESLint"],
-    },
+    
      {
       position: "Fullstack",
       title: "Projeto Sispar Back",
