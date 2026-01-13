@@ -89,7 +89,7 @@ const Project = () => {
         desenvolvimento frontend, backend e full stack.
       </p>
 
-      <div className="px-8 py-12 grid grid-cols-1 xl:px-0 md:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
+      <div className="py-12 grid grid-cols-1 sm:px-4 xl:px-0 md:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
         {projects.map((project) => (
           <CardProject key={project.title} {...project} />
         ))}
