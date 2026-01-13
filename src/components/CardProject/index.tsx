@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import IconGitHub from "../../../public/assets/github.png";
 import IconLink from "../../../public/assets/link.png";
@@ -27,10 +27,48 @@ const CardProject = ({
   const [expanded, setExpanded] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
 
   const safeImages = images ?? [];
-
   const hasMultipleImages = safeImages && safeImages.length > 1;
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+
+    if (distance > minSwipeDistance) {
+      nextImage();
+    }
+
+    if (distance < -minSwipeDistance) {
+      prevImage();
+    }
+  };
 
   const nextImage = () => {
     if (!safeImages) return;
@@ -61,6 +99,9 @@ const CardProject = ({
           <div
             className="relative max-w-5xl w-full px-4"
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
             <button
               onClick={() => setIsOpen(false)}
